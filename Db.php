@@ -2,16 +2,17 @@
 
 class Db
 {
-    private $host = "localhost"; //replace with your host name
+    private $host = "containers-us-west-176.railway.app"; //replace with your host name
     private $username = "root"; //replace with your username
-    private $password = ""; //replace with your password
-    private $database = "exchange_rates"; //replace with your database name
-
+    private $password = "hKDXgYtkz5kW2MikoWHq"; //replace with your password
+    private $database = "railway"; //replace with your database name
+    private $port = 6575; //replace with database server port
+    
     private $conn;
 
     public function __construct()
     {
-        $this->conn = new mysqli($this->host, $this->username, $this->password, $this->database);
+        $this->conn = new mysqli($this->host, $this->username, $this->password, $this->database, $this->port);
         if ($this->conn->connect_error) {
             die("Connection failed: " . $this->conn->connect_error);
         }
